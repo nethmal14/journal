@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     title: "Issue",
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/icon-192.png",
-  },
+  icon: "/icon-192.png",
+  apple: "/apple-touch-icon.png",
+},
 };
 
 export const viewport: Viewport = {
