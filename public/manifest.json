@@ -1,0 +1,40 @@
+{
+  "name": "Issue — A Magazine-Style Journal",
+  "short_name": "Issue",
+  "description": "A fully offline, privacy-first journaling app. Every day is a page in your personal magazine.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0b0d",
+  "theme_color": "#0b0b0d",
+  "categories": ["lifestyle", "productivity", "books"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's page",
+      "short_name": "Today",
+      "url": "/?today=1",
+      "description": "Jump straight to today's journal page"
+    }
+  ]
+}

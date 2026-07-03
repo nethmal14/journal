@@ -1,0 +1,41 @@
+{
+  "name": "Issue — A Magazine-Style Journal",
+  "shortName": "Issue",
+  "backgroundColor": "#0b0b0d",
+  "themeColor": "#0b0b0d",
+  "startUrl": "/",
+  "iconUrl": "/icon-512.png",
+  "maskableIconUrl": "/icon-maskable-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "navigationTimeout": 20000,
+  "applicationId": "ai.z.issue",
+  "packageId": "ai.z.issue",
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "android"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "minSdkVersion": 21,
+  "targetSdkVersion": 34,
+  "webManifestUrl": "https://YOUR_DEPLOYED_DOMAIN/manifest.json",
+  "fallbackUrl": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "fullScope": "/",
+  "features": {
+    "playBilling": {
+      "enabled": false
+    },
+    "locationDelegation": {
+      "enabled": false
+    },
+    "firstRunFlag": {
+      "enabled": true
+    }
+  },
+  "enableNotifications": false,
+  "generatorApp": "bubblewrap-cli",
+  "webBrowser": "chrome",
+  "manifestVersion": 2
+}

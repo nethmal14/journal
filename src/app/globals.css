@@ -1,0 +1,462 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ===========================================================
+   Issue — Magazine journal app
+   =========================================================== */
+
+html, body, #issue-root {
+  height: 100%;
+}
+
+body {
+  /* Prevent rubber-band scroll on iOS — feels more native */
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Edition tokens are injected at runtime via inline style on the root element.
+   These CSS variables are read by .issue-* classes below. */
+
+.issue-app {
+  --issue-bg: #f4efe4;
+  --issue-surface: #fbf7ec;
+  --issue-ink: #1c1a16;
+  --issue-ink-muted: #6a6457;
+  --issue-accent: #9a2a1b;
+  --issue-accent-ink: #ffffff;
+  --issue-rule: #1c1a16;
+  --issue-serif: var(--font-source-serif), Georgia, serif;
+  --issue-sans: var(--font-inter), system-ui, sans-serif;
+  --issue-mono: var(--font-jetbrains), "Courier New", monospace;
+  background: var(--issue-bg);
+  color: var(--issue-ink);
+  font-family: var(--issue-sans);
+  min-height: 100dvh;
+  transition: background-color 600ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Frosted pill nav */
+.issue-pill {
+  background: color-mix(in srgb, var(--issue-surface) 70%, transparent);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid color-mix(in srgb, var(--issue-ink) 10%, transparent);
+  box-shadow: 0 8px 32px -8px rgba(0,0,0,0.18), 0 1px 0 0 color-mix(in srgb, var(--issue-surface) 50%, transparent) inset;
+}
+
+/* Page surface — magazine paper */
+.issue-page {
+  background: var(--issue-surface);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--issue-ink) 6%, transparent),
+    0 30px 60px -20px rgba(0,0,0,0.25),
+    0 8px 16px -8px rgba(0,0,0,0.12);
+}
+
+/* Masthead typography */
+.issue-masthead-rule {
+  border-top: 2px solid var(--issue-ink);
+  border-bottom: 1px solid var(--issue-ink);
+}
+
+.issue-masthead-title {
+  font-family: var(--issue-serif);
+  letter-spacing: 0.02em;
+}
+
+.issue-meta-caps {
+  font-family: var(--issue-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  font-size: 10px;
+}
+
+/* =========================== Block presets =========================== */
+
+/* --- Heading --- */
+.preset-heading-editorial-serif {
+  font-family: var(--issue-serif);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+}
+.preset-heading-modern-sans {
+  font-family: var(--issue-sans);
+  font-weight: 600;
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.preset-heading-typewriter {
+  font-family: var(--issue-mono);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+.preset-heading-minimal-caps {
+  font-family: var(--issue-sans);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+/* --- Body --- */
+.preset-body-classic-justified {
+  font-family: var(--issue-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+  text-indent: 1.4em;
+}
+.preset-body-classic-justified::first-letter {
+  /* drop-cap on first paragraph handled by layout, not here */
+}
+.preset-body-modern-clean {
+  font-family: var(--issue-sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  letter-spacing: -0.005em;
+}
+.preset-body-kraft-soft {
+  font-family: var(--issue-serif);
+  font-size: 1.0625rem;
+  line-height: 1.72;
+}
+.preset-body-noir-justified {
+  font-family: var(--issue-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* First paragraph after a heading gets a drop cap in classic layouts */
+.drop-cap::first-letter {
+  font-family: var(--issue-serif);
+  font-weight: 700;
+  font-size: 3.6em;
+  line-height: 0.85;
+  float: left;
+  margin: 0.05em 0.1em 0 -0.05em;
+  color: var(--issue-accent);
+}
+
+/* --- Image --- */
+.preset-image-full-bleed {
+  width: 100%;
+  display: block;
+}
+.preset-image-framed-polaroid {
+  background: #fff;
+  padding: 12px 12px 36px;
+  box-shadow: 0 12px 28px -10px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.08);
+  display: block;
+  width: 100%;
+}
+.preset-image-framed-polaroid img {
+  display: block;
+  width: 100%;
+}
+.preset-image-halftone img {
+  filter: grayscale(1) contrast(1.2);
+  /* CSS-only halftone approximation */
+  background-image:
+    radial-gradient(circle, rgba(0,0,0,0.85) 1px, transparent 1.4px);
+  background-size: 4px 4px;
+  background-blend-mode: multiply;
+}
+.preset-image-duotone {
+  position: relative;
+  background: var(--issue-accent);
+}
+.preset-image-duotone img {
+  mix-blend-mode: luminosity;
+  filter: grayscale(1) contrast(1.1);
+  opacity: 0.95;
+}
+
+/* --- Quote --- */
+.preset-quote-pull-quote-large {
+  font-family: var(--issue-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  border-top: 2px solid var(--issue-ink);
+  border-bottom: 2px solid var(--issue-ink);
+  padding: 1.4em 0;
+}
+.preset-quote-sidebar-quote {
+  font-family: var(--issue-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 3.6vw, 1.6rem);
+  line-height: 1.35;
+  border-left: 3px solid var(--issue-accent);
+  padding-left: 1em;
+}
+.preset-quote-underline-accent {
+  font-family: var(--issue-sans);
+  font-weight: 500;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  border-bottom: 2px solid var(--issue-accent);
+  padding-bottom: 0.3em;
+  display: inline-block;
+}
+
+/* --- Caption --- */
+.preset-caption-italic-smallcaps {
+  font-family: var(--issue-serif);
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--issue-ink-muted);
+}
+.preset-caption-modern-meta {
+  font-family: var(--issue-sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--issue-ink-muted);
+  font-weight: 500;
+}
+
+/* --- Divider --- */
+.preset-divider-hairline {
+  height: 1px;
+  background: color-mix(in srgb, var(--issue-ink) 30%, transparent);
+  width: 100%;
+}
+.preset-divider-ornamental {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  color: var(--issue-ink-muted);
+  font-family: var(--issue-serif);
+  font-size: 1.2rem;
+}
+.preset-divider-ornamental::before,
+.preset-divider-ornamental::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: color-mix(in srgb, var(--issue-ink) 30%, transparent);
+  max-width: 80px;
+}
+.preset-divider-whitespace-gap {
+  height: 2.5em;
+}
+
+/* Calendar day cell with entry */
+.calendar-day-has-entry {
+  position: relative;
+}
+.calendar-day-has-entry::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--issue-accent);
+}
+
+/* Subtle paper grain for warm-kraft edition */
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.4) 1px, transparent 1.4px),
+    radial-gradient(circle at 70% 80%, rgba(0,0,0,0.3) 1px, transparent 1.4px),
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.2) 0.5px, transparent 1px);
+  background-size: 8px 8px, 11px 11px, 5px 5px;
+}
+
+/* Hide scrollbars in the scrub filmstrip */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Two-column body for op-ed / mixed-grid layouts */
+.two-col-body {
+  column-count: 2;
+  column-gap: 2.5em;
+  column-rule: 1px solid color-mix(in srgb, var(--issue-ink) 15%, transparent);
+}
+
+@media (max-width: 640px) {
+  .two-col-body { column-count: 1; }
+}
+
+/* Custom focus rings that don't break the editorial feel */
+.issue-editable:focus {
+  outline: none;
+  background: color-mix(in srgb, var(--issue-accent) 6%, transparent);
+  border-radius: 2px;
+}
+
+/* Animated chevrons / controls */
+.fade-on-idle {
+  transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.idle-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Subtle pulse for the privacy indicator */
+@keyframes issue-pulse-soft {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+.privacy-dot {
+  animation: issue-pulse-soft 3.6s ease-in-out infinite;
+}
+
+/* Hide number input spinners and select native chrome where we render custom */
+input, textarea, button, select {
+  font-family: inherit;
+}
+
+/* Safe-area aware padding */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
